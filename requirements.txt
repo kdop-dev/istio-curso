@@ -1,0 +1,7 @@
+ipykernel
+ipython
+ipywidgets
+bash_kernel
+jupyter
+notebook
+zsh-jupyter-kernel
