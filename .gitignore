@@ -8,3 +8,4 @@ exemplos/my-app
 exemplos/micro-sock-src
 __pycache__
 .kube
+.ipynb_checkpoints
