@@ -1,0 +1,194 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end
+spec:
+  type: ClusterIP
+  selector:
+    app: front-end
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-router
+spec:
+  type: ClusterIP
+  selector:
+    app: edge-router
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue
+spec:
+  type: ClusterIP
+  selector:
+    app: catalogue
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts
+spec:
+  type: ClusterIP
+  selector:
+    app: accounts
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts-db
+spec:
+  type: ClusterIP
+  selector:
+    app: accounts-db
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart
+spec:
+  type: ClusterIP
+  selector:
+    app: cart
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: carts-db
+spec:
+  type: ClusterIP
+  selector:
+    app: carts-db
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders
+spec:
+  type: ClusterIP
+  selector:
+    app: orders
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-db
+spec:
+  type: ClusterIP
+  selector:
+    app: orders-db
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping
+spec:
+  type: ClusterIP
+  selector:
+    app: shipping
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queue-master
+spec:
+  type: ClusterIP
+  selector:
+    app: queue-master
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queue-worker
+spec:
+  type: ClusterIP
+  selector:
+    app: queue-worker
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+spec:
+  type: ClusterIP
+  selector:
+    app: rabbitmq
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+spec:
+  type: ClusterIP
+  selector:
+    app: payment
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login
+spec:
+  type: ClusterIP
+  selector:
+    app: login
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080

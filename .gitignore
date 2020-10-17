@@ -1,1 +1,10 @@
 istio-1.7*
+.vscode
+.DS_Store
+exemplos/gcp-microservices-demo
+exemplos/microservices-demo
+exemplos/load-test
+exemplos/my-app
+exemplos/micro-sock-src
+__pycache__
+.kube

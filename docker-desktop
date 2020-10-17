@@ -1,0 +1,35 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://backbone-eda-3bedbf25.hcp.eastus.azmk8s.io:443
+  name: backbone-educacional
+- cluster:
+    server: ""
+  name: desktop-cluster
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://kubernetes.docker.internal:6443
+  name: docker-desktop
+contexts:
+- context:
+    cluster: backbone-educacional
+    user: clusterUser_COGNA_BACKBONE_EDUCACIONAL_backbone-educacional
+  name: backbone-educacional
+- context:
+    cluster: docker-desktop
+    user: docker-desktop
+  name: docker-desktop
+current-context: docker-desktop
+kind: Config
+preferences: {}
+users:
+- name: clusterUser_COGNA_BACKBONE_EDUCACIONAL_backbone-educacional
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+    token: 81b70d6eae567888334f28cf38ea2cda085ec5222ed1e5700a66b96213ca097780ef6423f43cff20ea72392720ecc016f424a41098a27b15aa598523f2984d05
+- name: docker-desktop
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
