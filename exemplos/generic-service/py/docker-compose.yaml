@@ -7,16 +7,49 @@ services:
     image: kdop/generic-service:0.0.1
     container_name: front-end
     environment:
-      - SCHED_CALL_URL_LST=http://front-end:8000,http://localhost:8000/healthz
+      - SCHED_CALL_URL_LST=http://front-end:8000/s
       - SCHED_CALL_INTERVAL=10
-      - SPLIT_CALL_URL_LST=http://backend:8000
+      - SPLIT_CALL_URL_LST=http://login:8000/,http://catalogue:8000/,http://orders:8000/s
     ports:
       - "8000:8000"
-  backend:
+  login:
     image: kdop/generic-service:0.0.1
-    container_name: backend
+    container_name: login
+  catalogue:
+    image: kdop/generic-service:0.0.1
+    container_name: catalogue
+  orders:
+    image: kdop/generic-service:0.0.1
+    container_name: orders
     environment:
-      - SCHED_CALL_INTERVAL=5
-      - SCHED_CALL_URL_LST=http://localhost:8000/healthz
-
-
+      - SPLIT_CALL_URL_LST=http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s
+  orders-db:
+    image: kdop/generic-service:0.0.1
+    container_name: orders-db
+  shipping:
+    image: kdop/generic-service:0.0.1
+    container_name: shipping
+    environment:
+      - SPLIT_CALL_URL_LST=http://queue:8000/
+  queue:
+    image: kdop/generic-service:0.0.1
+    container_name: queue
+  cart:
+    image: kdop/generic-service:0.0.1
+    container_name: cart
+    environment:
+      - SPLIT_CALL_URL_LST=http://cart-db:8000/
+  cart-db:
+    image: kdop/generic-service:0.0.1
+    container_name: cart-db
+  payment:
+    image: kdop/generic-service:0.0.1
+    container_name: payment
+  accounts:
+    image: kdop/generic-service:0.0.1
+    container_name: accounts
+    environment:
+      - SPLIT_CALL_URL_LST=http://accounts-db:8000/
+  accounts-db:
+    image: kdop/generic-service:0.0.1
+    container_name: accounts-db
