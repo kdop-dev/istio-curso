@@ -2,3 +2,6 @@ fastapi
 uvicorn
 apscheduler
 requests
+pydantic
+fastapi_opentracing
+fastapi_contrib[jaegertracing]
