@@ -14,6 +14,7 @@ from pydantic import BaseModel
 from fastapi_contrib.tracing.middlewares import OpentracingMiddleware
 from fastapi_contrib.tracing.utils import setup_opentracing
 
+#* --- APP --- #
 app = FastAPI()
 
 #app.add_middleware(OpenTracingMiddleware)
@@ -42,7 +43,7 @@ class MessageOut(BaseModel):
             }
         }
 
-# --- UTILS --- #
+#* --- UTILS --- #
 def invoke_ws_list(url_list: list):
 #async def invoke_ws_list(url_list: list):
     logging.debug('Invoked')
@@ -56,7 +57,7 @@ def invoke_ws_list(url_list: list):
             except Exception as err:
                 logging.error(f"Failed reaching {url} - {err}")
 
-# --- ROUTES --- #
+#* --- ROUTES --- #
 # root
 @app.get("/", response_model=MessageOut)
 async def root():
@@ -66,6 +67,7 @@ async def root():
     return message
 
 # Split
+# TODO: Pass headers for opentracing
 @app.get("/s", response_model=MessageOut)
 async def split():
     #carrier = await get_opentracing_span_headers()
@@ -83,7 +85,7 @@ async def health():
     message = MessageOut(name="status", description="health")
     return message
 
-## --- Scheduler -- #
+#* --- Scheduler -- #
 def schedule_invoke_ws():
     logging.debug('Invoked')
     url_list = SCHED_CALL_URL_LST.split(",")

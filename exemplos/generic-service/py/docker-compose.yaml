@@ -7,11 +7,16 @@ services:
     image: kdop/generic-service:0.0.1
     container_name: front-end
     environment:
-      - CALL_SERVICES=front-end:8000,localhost:8000/healthz,backend:8000
-      - CALL_INTERVAL=10
+      - SCHED_CALL_URL_LST=http://front-end:8000,http://localhost:8000/healthz
+      - SCHED_CALL_INTERVAL=10
+      - SPLIT_CALL_URL_LST=http://backend:8000
+    ports:
+      - "8000:8000"
   backend:
     image: kdop/generic-service:0.0.1
     container_name: backend
     environment:
-      - CALL_INTERVAL=10
+      - SCHED_CALL_INTERVAL=5
+      - SCHED_CALL_URL_LST=http://localhost:8000/healthz
+
 
