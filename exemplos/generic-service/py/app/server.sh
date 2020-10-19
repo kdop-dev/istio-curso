@@ -6,4 +6,4 @@ echo "health at http://localhost:8000/healthz"
 # uvicorn main:app --reload
 
 # Prd
-uvicorn --host 0.0.0.0 --port 8000 --workers 2 main:app
+uvicorn --host=0.0.0.0 --port=8000 --workers=2 --forwarded-allow-ips=* --proxy-headers main:app
