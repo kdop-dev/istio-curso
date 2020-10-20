@@ -9,21 +9,13 @@ import requests
 import logging
 import asyncio
 from pydantic import BaseModel
-#from fastapi_opentracing import get_opentracing_span_headers
-#from fastapi_opentracing.middleware import OpenTracingMiddleware
-from fastapi_contrib.tracing.middlewares import OpentracingMiddleware
-from fastapi_contrib.tracing.utils import setup_opentracing
+from fastapi_opentracing import get_opentracing_span_headers
+from fastapi_opentracing.middleware import OpenTracingMiddleware
 
 #* --- APP --- #
 app = FastAPI()
 
-#app.add_middleware(OpenTracingMiddleware)
-
-# Opentracing
-@app.on_event('startup')
-async def startup():
-    setup_opentracing(app)
-    app.add_middleware(OpentracingMiddleware)
+app.add_middleware(OpenTracingMiddleware)
 
 SCHED_CALL_URL_LST = os.getenv("SCHED_CALL_URL_LST") or ""
 SCHED_CALL_INTERVAL = os.getenv("SCHED_CALL_INTERVAL") or "10"
@@ -44,25 +36,25 @@ class MessageOut(BaseModel):
         }
 
 #* --- UTILS --- #
-def invoke_ws_list(url_list: list):
-#async def invoke_ws_list(url_list: list):
+def invoke_ws_list(url_list: list, headers = {}):
     logging.debug('Invoked')
     logging.info(f'Calling: {url_list}')
     for url in url_list:
         if url:
             try:
-                response = requests.get(url)
+                response = requests.get(url, headers=headers)
                 logging.info(f"headers: {response.headers}")
                 logging.info(f"body: {response.content}")
             except Exception as err:
                 logging.error(f"Failed reaching {url} - {err}")
 
+
 #* --- ROUTES --- #
 # root
 @app.get("/", response_model=MessageOut)
 async def root():
-    #carrier = await get_opentracing_span_headers()
-    #logging.info(f"opentracing: {carrier}")
+    carrier = await get_opentracing_span_headers()
+    logging.info(f"opentracing: {carrier}")
     message = MessageOut(name="greetings", description="Hi there!")
     return message
 
@@ -70,18 +62,16 @@ async def root():
 # TODO: Pass headers for opentracing
 @app.get("/s", response_model=MessageOut)
 async def split():
-    #carrier = await get_opentracing_span_headers()
-    #logging.info(f"opentracing: {carrier}")
+    carrier = await get_opentracing_span_headers()
+    logging.info(f"opentracing: {carrier}")
     url_list = SPLIT_CALL_URL_LST.split(",")
     message = MessageOut(name="split", description=f"List {url_list}")
-    invoke_ws_list(url_list)
-    #await invoke_ws_list(url_list)
+    invoke_ws_list(url_list, carrier)
     return message
 
 # Health
 @app.get("/healthz", response_model=MessageOut)
 async def health():
-    #carrier = await get_opentracing_span_headers()
     message = MessageOut(name="status", description="health")
     return message
 
@@ -89,7 +79,6 @@ async def health():
 def schedule_invoke_ws():
     logging.debug('Invoked')
     url_list = SCHED_CALL_URL_LST.split(",")
-    #asyncio.run(invoke_ws_list(url_list))
     invoke_ws_list(url_list)
 
 # create schedule for printing time

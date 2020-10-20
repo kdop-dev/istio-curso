@@ -1,5 +1,4 @@
 # minimal compose for a simulation of https://github.com/weaveworks/weaveDemo
-
 version: '2'
 
 services:
