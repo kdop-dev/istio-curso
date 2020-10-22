@@ -7,8 +7,15 @@ using Dates: now
 using Dates: UTC
 using HTTP
 
-# -- Service --#
+# -- Parameters -- #
+SCHED_CALL_INTERVAL = get(ENV, "SCHED_CALL_INTERVAL", "10s")
+SCHED_CALL_URL_LST = get(ENV, "SCHED_CALL_URL_LST", "")
+SPLIT_CALL_URL_LST = get(ENV, "SPLIT_CALL_URL_LST", "")
 
+service_list_to_call = split(SCHED_CALL_URL_LST, ",")
+url_list = split(SPLIT_CALL_URL_LST, ",")
+
+# -- Service --#
 Genie.config.run_as_server = true
 
 route("/") do
@@ -16,35 +23,29 @@ route("/") do
 end
 
 route("/healthz") do
-  "Ok"
+  (:status => "health") |> json
+end
+
+route("/s") do
+    invoke_split_url_list()
+    return (:split => url_list) |> json
 end
 
 Genie.startup(8000, "0.0.0.0", async = true)
 
-# -- Schedule -- #
-
-
-CALL_INTERVAL = get(ENV, "CALL_INTERVAL", "5s")
-CALL_SERVICES = get(ENV, "CALL_SERVICES", "")
-
-service_list_to_call = split(CALL_SERVICES, ",")
-
-function print_time_noparam()
-    println("From print_time_noparam $(now(UTC))")
-end
-
-function print_time_args(x)
-  for service in service_list_to_call
-    println("From print_time_args every $(CALL_INTERVAL) calling $(service) - $(now(UTC)) $x")
-    r = HTTP.request("GET", "http://$(service)")
+function invoke_split_url_list()
+  for service in url_list
+    println("From print_time_args every $(SCHED_CALL_INTERVAL) calling $(service) - $(now(UTC))")
+    r = HTTP.request("GET", service)
     println(r)
   end
 end
 
-function print_time_kwargs(; a="default")
+# -- Schedule -- #
+function invoke_sched_url_list()
   for service in service_list_to_call
-    println("From print_time_args every $(CALL_INTERVAL) calling $(service) - $(now(UTC)) $a")
-    r = HTTP.request("GET", "http://$(service)")
+    println("From print_time_args every $(SCHED_CALL_INTERVAL) calling $(service) - $(now(UTC))")
+    r = HTTP.request("GET", service)
     println(r)
   end
 end
@@ -54,10 +55,11 @@ function schedule_invoke_ws()
     sched = BlockingScheduler()
 
     # Define what action will be executed
-    action = Action(print_time_kwargs; Dict(:a=>"keyword")...)
+    # TODO: Pass list as parameter
+    action = Action(invoke_sched_url_list)
 
     # Define when job should be triggered
-    trigger = Trigger(TimeFrame(CALL_INTERVAL))  # periodic job ; priority=0 by default
+    trigger = Trigger(TimeFrame(SCHED_CALL_INTERVAL))  # periodic job ; priority=0 by default
     
     # Add job to jobstore
     add(sched, action, trigger)

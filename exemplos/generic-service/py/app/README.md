@@ -12,6 +12,8 @@ docker build -t kdop/generic-service:0.0.1 .
 
 ## Run
 
+![](media/../../../../../media/simul-shop-fb.png)
+
 ```bash
 # Create net
 docker network create my-net
@@ -36,5 +38,14 @@ docker run -d --rm \
     kdop/generic-service:0.0.1
 
 # Clean-up
+docker kill front-end backend
 docker network rm my-net
+```
+
+## Generating load
+
+Ref: [An Introduction to Load Testing](https://www.digitalocean.com/community/tutorials/an-introduction-to-load-testing#load-testing-basics)
+
+```bash
+ab -n 1000 -c 10 http://localhost:8000
 ```

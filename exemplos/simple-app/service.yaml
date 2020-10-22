@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-app
+  labels:
+    app: simple-app
+    version: "1.0"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: simple-app
+    version: "1.0"

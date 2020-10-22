@@ -1,0 +1,191 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end
+  labels:
+    app: front-end
+    version: "1.0"  
+spec:
+  type: ClusterIP
+  selector:
+    app: front-end
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login
+  labels:
+    app: login
+    version: "1.0"    
+spec:
+  type: ClusterIP
+  selector:
+    app: login
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue
+  labels:
+    app: catalogue
+    version: "1.0"    
+spec:
+  type: ClusterIP
+  selector:
+    app: catalogue
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts
+  labels:
+    app: accounts
+    version: "1.0"  
+spec:
+  type: ClusterIP
+  selector:
+    app: accounts
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts-db
+  labels:
+    app: accounts-db
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: accounts-db
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart
+  labels:
+    app: cart
+    version: "1.0"  
+spec:
+  type: ClusterIP
+  selector:
+    app: cart
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-db
+  labels:
+    app: cart-db
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: cart-db
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders
+  labels:
+    app: orders
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: orders
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-db
+  labels:
+    app: orders-db
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: orders-db
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping
+  labels:
+    app: shipping
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: shipping
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queue
+  labels:
+    app: queue
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: queue
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+  labels:
+    app: payment
+    version: "1.0"
+spec:
+  type: ClusterIP
+  selector:
+    app: payment
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
