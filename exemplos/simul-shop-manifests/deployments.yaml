@@ -18,13 +18,13 @@ spec:
       containers:
       - name: front-end
         image: kdop/generic-service:0.0.1
-        environment:
+        env:
           - name: SCHED_CALL_URL_LST
-            value: http://front-end:8000/s
+            value: "http://front-end:8000/s"
           - name: SCHED_CALL_INTERVAL
-            valaue: 10
+            value: "10"
           - name: SPLIT_CALL_URL_LST
-            value: http://login:8000/,http://catalogue:8000/,http://orders:8000/s
+            value: "http://login:8000/,http://catalogue:8000/,http://orders:8000/s"
         ports:
         - containerPort: 8080
 ---
@@ -91,9 +91,9 @@ spec:
       containers:
       - name: orders
         image: kdop/generic-service:0.0.1
-        environment:
+        env:
           - name: SPLIT_CALL_URL_LST
-            value: http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s
+            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s"
         ports:
         - containerPort: 8080
 ---
@@ -138,9 +138,9 @@ spec:
       containers:
       - name: shipping
         image: kdop/generic-service:0.0.1
-        environment:
+        env:
           - name: SPLIT_CALL_URL_LST
-            value: http://queue:8000/
+            value: "http://queue:8000/"
         ports:
         - containerPort: 8080
 ---
@@ -185,9 +185,9 @@ spec:
       containers:
       - name: cart
         image: kdop/generic-service:0.0.1
-        environment:
+        env:
           - name: SPLIT_CALL_URL_LST
-            value: http://cart-db:8000/
+            value: "http://cart-db:8000/"
         ports:
         - containerPort: 8080
 ---
@@ -254,9 +254,9 @@ spec:
       containers:
       - name: accounts
         image: kdop/generic-service:0.0.1
-        environment:
+        env:
           - name: SPLIT_CALL_URL_LST
-            value: http://accounts-db:8000/
+            value: "http://accounts-db:8000/"
         ports:
         - containerPort: 8080
 ---
@@ -281,4 +281,3 @@ spec:
         image: kdop/generic-service:0.0.1
         ports:
         - containerPort: 8080
-['']
