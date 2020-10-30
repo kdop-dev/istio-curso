@@ -4,7 +4,7 @@ metadata:
   name: front-end
   labels:
     app: front-end
-    version: "1.0"  
+    version: v1  
 spec:
   type: ClusterIP
   selector:
@@ -20,7 +20,7 @@ metadata:
   name: login
   labels:
     app: login
-    version: "1.0"    
+    version: v1    
 spec:
   type: ClusterIP
   selector:
@@ -36,7 +36,7 @@ metadata:
   name: catalogue
   labels:
     app: catalogue
-    version: "1.0"    
+    version: v1    
 spec:
   type: ClusterIP
   selector:
@@ -52,7 +52,7 @@ metadata:
   name: accounts
   labels:
     app: accounts
-    version: "1.0"  
+    version: v1  
 spec:
   type: ClusterIP
   selector:
@@ -68,7 +68,7 @@ metadata:
   name: accounts-db
   labels:
     app: accounts-db
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -84,7 +84,7 @@ metadata:
   name: cart
   labels:
     app: cart
-    version: "1.0"  
+    version: v1  
 spec:
   type: ClusterIP
   selector:
@@ -100,7 +100,7 @@ metadata:
   name: cart-db
   labels:
     app: cart-db
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -116,7 +116,7 @@ metadata:
   name: orders
   labels:
     app: orders
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -132,7 +132,7 @@ metadata:
   name: orders-db
   labels:
     app: orders-db
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -148,7 +148,7 @@ metadata:
   name: shipping
   labels:
     app: shipping
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -164,7 +164,7 @@ metadata:
   name: queue
   labels:
     app: queue
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:
@@ -180,7 +180,7 @@ metadata:
   name: payment
   labels:
     app: payment
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   selector:

@@ -1,5 +1,6 @@
+from logging import info
 from typing import Optional
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import atexit
@@ -14,7 +15,6 @@ from fastapi_opentracing.middleware import OpenTracingMiddleware
 
 #* --- APP --- #
 app = FastAPI()
-
 app.add_middleware(OpenTracingMiddleware)
 
 SCHED_CALL_URL_LST = os.getenv("SCHED_CALL_URL_LST") or ""
@@ -61,9 +61,10 @@ async def root():
 # Split
 # TODO: Pass headers for opentracing
 @app.get("/s", response_model=MessageOut)
-async def split():
+async def split(request: Request):
     carrier = await get_opentracing_span_headers()
     logging.info(f"opentracing: {carrier}")
+    logging.info(f"request.headers: {request.headers}")
     url_list = SPLIT_CALL_URL_LST.split(",")
     message = MessageOut(name="split", description=f"List {url_list}")
     invoke_ws_list(url_list, carrier)

@@ -7,12 +7,12 @@ spec:
   selector:
     matchLabels:
       app: front-end
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: front-end
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -36,12 +36,12 @@ spec:
   selector:
     matchLabels:
       app: login
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: login
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -58,12 +58,12 @@ spec:
   selector:
     matchLabels:
       app: catalogue
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: catalogue
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -80,12 +80,12 @@ spec:
   selector:
     matchLabels:
       app: orders
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: orders
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -105,12 +105,12 @@ spec:
   selector:
     matchLabels:
       app: orders-db
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: orders-db
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -127,12 +127,12 @@ spec:
   selector:
     matchLabels:
       app: shipping
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: shipping
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -152,12 +152,12 @@ spec:
   selector:
     matchLabels:
       app: queue
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: queue
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -174,12 +174,12 @@ spec:
   selector:
     matchLabels:
       app: cart
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: cart
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -199,12 +199,12 @@ spec:
   selector:
     matchLabels:
       app: cart-db
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: cart-db
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -221,12 +221,12 @@ spec:
   selector:
     matchLabels:
       app: payment
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: payment
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -243,12 +243,12 @@ spec:
   selector:
     matchLabels:
       app: accounts
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: accounts
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -268,12 +268,12 @@ spec:
   selector:
     matchLabels:
       app: accounts-db
-      version: "1.0"
+      version: v1
   template:
     metadata:
       labels:
         app: accounts-db
-        version: "1.0"
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
