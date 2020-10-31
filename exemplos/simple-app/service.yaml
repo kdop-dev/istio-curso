@@ -4,7 +4,7 @@ metadata:
   name: simple-app
   labels:
     app: simple-app
-    version: "1.0"
+    version: v1
 spec:
   type: ClusterIP
   ports:
@@ -14,4 +14,4 @@ spec:
       name: http
   selector:
     app: simple-app
-    version: "1.0"
+    version: v1

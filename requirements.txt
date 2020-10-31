@@ -4,4 +4,5 @@ ipywidgets
 bash_kernel
 jupyter
 notebook
+jupyterlab
 zsh-jupyter-kernel
