@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
         env:
           - name: SCHED_CALL_URL_LST
             value: "http://front-end:8000/s"
@@ -25,6 +25,10 @@ spec:
             value: "10"
           - name: SPLIT_CALL_URL_LST
             value: "http://login:8000/,http://catalogue:8000/,http://orders:8000/s"
+          - name: APP
+            value: "front-end"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -46,7 +50,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: login
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "login"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -68,7 +77,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: catalogue
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "catalogue"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -90,10 +104,14 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s"
+          - name: APP
+            value: "orders"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -115,7 +133,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders-db
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "orders-db"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -137,10 +160,14 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: shipping
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://queue:8000/"
+          - name: APP
+            value: "shipping"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -162,7 +189,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: queue
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "queue"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -184,10 +216,14 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: cart
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://cart-db:8000/"
+          - name: APP
+            value: "cart"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -209,7 +245,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: cart-db
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "cart-db"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -231,7 +272,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: payment
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "payment"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -253,10 +299,14 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: accounts
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://accounts-db:8000/"
+          - name: APP
+            value: "accounts"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080
 ---
@@ -278,6 +328,11 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: accounts-db
-        image: kdop/generic-service:0.0.1
+        image: kdop/generic-service:0.0.2
+        env:
+          - name: APP
+            value: "accounts-db"
+          - name: VERSION
+            value: "v1"
         ports:
         - containerPort: 8080

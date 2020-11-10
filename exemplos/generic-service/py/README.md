@@ -60,3 +60,39 @@ docker logs -f front-end
 docker kill front-end backend
 docker network rm my-net
 ```
+
+## TODO
+
+- [x] Add response date, app and version to body
+
+Example:
+
+```json
+{
+    "name": "message_type",
+    "description": "any description or value",
+    "app": "app-name",
+    "version": "version-string",
+    "when": "%Y-%m-%d %H:%M:%S"
+}
+```
+
+- [ ] Configurable delay
+- [ ] Configurable response payload size - field data
+
+Example:
+
+```json
+{
+    "name": "message_type",
+    "description": "any description or value",
+    "app": "app-name",
+    "version": "version-string",
+    "when": "%Y-%m-%d %H:%M:%S",
+    "data": "long string with parametrized size"
+}
+```
+
+- [ ] Configurable response code
+- [ ] Configurable method
+- [ ] Configurable sync / assync request

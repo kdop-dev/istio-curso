@@ -1,5 +1,7 @@
 FROM python:3.8-buster
 
+RUN apt install dnsutils
+
 WORKDIR /app
 
 COPY ./app /app

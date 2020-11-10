@@ -5,10 +5,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import atexit
 import os
-import time
 import requests
 import logging
-import asyncio
+import datetime
 from pydantic import BaseModel
 from fastapi_opentracing import get_opentracing_span_headers
 from fastapi_opentracing.middleware import OpenTracingMiddleware
@@ -20,18 +19,26 @@ app.add_middleware(OpenTracingMiddleware)
 SCHED_CALL_URL_LST = os.getenv("SCHED_CALL_URL_LST") or ""
 SCHED_CALL_INTERVAL = os.getenv("SCHED_CALL_INTERVAL") or "10"
 SPLIT_CALL_URL_LST = os.getenv("SPLIT_CALL_URL_LST") or ""
+APP = os.getenv("APP") or ""
+VERSION = os.getenv("VERSION") or ""
 
 logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s', level=logging.INFO)
 
 class MessageOut(BaseModel):
     name: str
     description: Optional[str] = None
+    app: Optional[str] = None
+    version: Optional[str] = None
+    when: Optional[str] = None
 
     class Config:
         schema_extra = {
             "example": {
                 "name": "message_type",
                 "description": "any description or value",
+                "app": "app-name",
+                "version": "version",
+                "when": "%Y-%m-%d %H:%M:%S"
             }
         }
 
@@ -53,27 +60,30 @@ def invoke_ws_list(url_list: list, headers = {}):
 # root
 @app.get("/", response_model=MessageOut)
 async def root():
+    when = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     carrier = await get_opentracing_span_headers()
     logging.info(f"opentracing: {carrier}")
-    message = MessageOut(name="greetings", description="Hi there!")
+    message = MessageOut(name="greetings", description="Hi there!", when=when, app=APP, version=VERSION)
     return message
 
 # Split
-# TODO: Pass headers for opentracing
+# TODO: Return app, version, datetime
 @app.get("/s", response_model=MessageOut)
 async def split(request: Request):
+    when = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     carrier = await get_opentracing_span_headers()
     logging.info(f"opentracing: {carrier}")
     logging.info(f"request.headers: {request.headers}")
     url_list = SPLIT_CALL_URL_LST.split(",")
-    message = MessageOut(name="split", description=f"List {url_list}")
+    message = MessageOut(name="split", description=f"List {url_list}", when=when, app=APP, version=VERSION)
     invoke_ws_list(url_list, carrier)
     return message
 
 # Health
 @app.get("/healthz", response_model=MessageOut)
 async def health():
-    message = MessageOut(name="status", description="health")
+    when = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    message = MessageOut(name="status", description="health", when=when, app=APP, version=VERSION)
     return message
 
 #* --- Scheduler -- #
