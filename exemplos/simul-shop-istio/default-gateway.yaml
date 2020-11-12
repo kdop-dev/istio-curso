@@ -1,0 +1,15 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: default-gateway # <---- Qualquer nome, mas você deverá usar o mesmo nome nos seus VirtualServices
+spec:
+  selector:
+    app: istio-ingressgateway # <--- Seleciona qual ingress gateway aplicar a configuração. Será aplicado em todos com rótulo app=istio-ingressgateway
+  servers:
+  - port:
+      number: 80 # <--- Porta que o gateqay irá responder
+      name: http
+      protocol: HTTP # <--- Protocolo
+    hosts:
+    - "*" # <---- Host externo. Restringe quais FQDN utilizarão esse gateway, caso você tenha um domínio, neste exemplo qualquer host pode acessa-lo
