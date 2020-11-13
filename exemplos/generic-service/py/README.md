@@ -96,3 +96,4 @@ Example:
 - [ ] Configurable response code
 - [ ] Configurable method
 - [ ] Configurable sync / assync request
+- [ ] Simulation of micro front-end. `/` - web, `/api` - programming interface

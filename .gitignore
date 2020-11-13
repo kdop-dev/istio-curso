@@ -1,6 +1,7 @@
 istio-1.7*
 .vscode
 .DS_Store
+.docker
 exemplos/gcp-microservices-demo
 exemplos/microservices-demo
 exemplos/load-test

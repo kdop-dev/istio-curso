@@ -1,0 +1,33 @@
+---
+kind: DestinationRule
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: front-end-drs
+spec:
+  host: front-end
+  subsets:
+    - labels:
+        version: v1
+      name: v1
+---
+kind: DestinationRule
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: login-drs
+spec:
+  host: login
+  subsets:
+    - labels:
+        version: v1
+      name: v1
+---
+kind: DestinationRule
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: catalogue-drs
+spec:
+  host: catalogue
+  subsets:
+    - labels:
+        version: v1
+      name: v1

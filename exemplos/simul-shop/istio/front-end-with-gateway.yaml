@@ -1,0 +1,16 @@
+---
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: front-end
+  namespace: default
+spec:
+  hosts: # <--- As regras se aplicam aos hsots da lista
+    # - front-end.default.svc.cluster.local # <--- quando usamos interno, como utilizamos "*" ele pode ser removido.
+    - "*" # <--- quando usamos pelo gateway. Repete a lista de hosts que está no gateway. Ideal utilizar FQDN.
+  gateways:
+  - default-gateway # <--- O nome do gateway que será configurado
+  http:
+    - route:
+        - destination:
+            host: front-end.default.svc.cluster.local # O endereço alvo. Podem ser diferentes
