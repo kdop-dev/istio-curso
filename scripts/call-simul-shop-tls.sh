@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SECURE_INGRESS_PORT=443
 INGRESS_HOST=localhost
 

@@ -19,10 +19,8 @@ spec:
       - name: front-end
         image: kdop/generic-service:0.0.2
         env:
-          - name: SCHED_CALL_URL_LST
-            value: "http://front-end:8000/s"
           - name: SCHED_CALL_INTERVAL
-            value: "10"
+            value: "300"
           - name: SPLIT_CALL_URL_LST
             value: "http://login:8000/,http://catalogue:8000/,http://orders:8000/s"
           - name: APP
@@ -107,7 +105,7 @@ spec:
         image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
-            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s"
+            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s,http://credit.financial:8000/"
           - name: APP
             value: "orders"
           - name: VERSION

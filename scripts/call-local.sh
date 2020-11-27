@@ -1,3 +1,5 @@
+#!/bin/bash
+
 while true
 do 
 curl http://credit.financial:8000/

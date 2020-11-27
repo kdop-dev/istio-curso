@@ -1,4 +1,4 @@
-istio-1.7*
+istio-1.*
 .vscode
 .DS_Store
 .docker
@@ -11,3 +11,4 @@ __pycache__
 .kube
 .ipynb_checkpoints
 bkp
+**/letsencrypt

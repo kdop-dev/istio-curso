@@ -178,19 +178,3 @@ spec:
   - name: http
     port: 8000
     targetPort: 8000
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: financial
-  name: credit
-  labels:
-    app: credit
-spec:
-  type: ClusterIP
-  selector:
-    app: credit
-  ports:
-  - name: http
-    port: 8000
-    targetPort: 8000

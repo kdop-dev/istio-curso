@@ -1,3 +1,5 @@
+#!/bin/bash
+
 while true
 do
 #curl --header "Host: simul-shop.com/s
