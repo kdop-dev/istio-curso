@@ -34,7 +34,7 @@ O curso utiliza a imagem pronta do generic-services - `kdop/generic-services` e 
 
 ## Nossos planos
 
-- [ ] Versão para download [github](https://github.com/kdop-dev/istio-curso) - Em progresso, Lançamento: Nov/2020
-- [ ] Versão do curso no [Katacoda](https://www.katacoda.com/) - Previsão: Nov/2020.
+- [ ] Versão para download [github](https://github.com/kdop-dev/istio-curso) - Em progresso, Lançamento: Dez/2020
+- [ ] Versão do curso no [Katacoda](https://www.katacoda.com/) - Previsão: Jan/2020.
 - [ ] Versão do curso no [mybinder](https://mybinder.org/) - Previsão: Jan/2020
-- [ ] Versão do curso [Udemy](https://udemy.com) - Previsão: Mar/2020
+- [ ] Versão do curso [Udemy](https://udemy.com) - Previsão: Fev/2020
