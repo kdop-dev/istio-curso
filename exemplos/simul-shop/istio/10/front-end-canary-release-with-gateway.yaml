@@ -7,6 +7,7 @@ metadata:
 spec:
   hosts:
     - simul-shop.com # <--- quando usamos pelo gateway. Repete a lista de hosts que está no gateway. Ideal utilizar FQDN.
+    - www.simul-shop.com
   gateways:
   - default-gateway # <--- O nome do gateway que será configurado
   http:

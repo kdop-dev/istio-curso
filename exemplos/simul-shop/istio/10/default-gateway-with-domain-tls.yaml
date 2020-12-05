@@ -13,13 +13,15 @@ spec:
       protocol: HTTP # <--- Protocolo
     hosts:
     - www.simul-shop.com # <---- Host externo. Restringe quais FQDN utilizarão esse gateway, caso você tenha um domínio, neste exemplo qualquer host pode acessa-lo
+    - simul-shop.com
   - port:
       number: 443
       name: https
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: www-simul-shop-credential # o segredo que foi criado para o certificado
+      credentialName: simul-shop.com-credential # o segredo que foi criado para o certificado
     hosts:
     - www.simul-shop.com
+    - simul-shop.com
   

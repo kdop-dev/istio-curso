@@ -11,4 +11,6 @@ __pycache__
 .kube
 .ipynb_checkpoints
 bkp
-**/letsencrypt
+*.crt
+*.csr
+*.key

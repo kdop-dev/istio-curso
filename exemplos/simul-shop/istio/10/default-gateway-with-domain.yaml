@@ -13,4 +13,4 @@ spec:
       protocol: HTTP # <--- Protocolo
     hosts:
     - simul-shop.com # <---- Host externo. Restringe quais FQDN utilizarão esse gateway, caso você tenha um domínio, neste exemplo qualquer host pode acessa-lo
-  
+    - www.simul-shop.com
