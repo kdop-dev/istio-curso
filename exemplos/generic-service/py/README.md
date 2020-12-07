@@ -97,3 +97,4 @@ Example:
 - [ ] Configurable method
 - [ ] Configurable sync / assync request
 - [ ] Simulation of micro front-end. `/` - web, `/api` - programming interface
+- [ ] Avaliar outras alternativas como [Hey](https://github.com/rakyll/hey)

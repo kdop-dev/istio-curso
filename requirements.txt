@@ -6,3 +6,4 @@ jupyter
 notebook
 jupyterlab
 zsh-jupyter-kernel
+autopep8
