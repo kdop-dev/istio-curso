@@ -8,15 +8,19 @@ git clone https://github.com/kdop-dev/istio-curso.git
 
 Para iniciar o curso você precisa:
 
+* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem.
+* Uma notebook, desktop ou máquina virtual para executar o curso
 * linux (ou wsl2)
 * docker-desktop (win ou mac)
-* kubernetes (para linux, win e mac usam do docker-desktop)
-* python3
-* conda
+* docker e kubernetes (para linux ou um cluster na nuvem)
+* python3 para executar o curso
+* conda para gerenciar ambientes de python
 
 ## Criando um ambiente para execução
 
 ```bash
+git clone https://github.com/kdop-dev/istio-curso.git # Ou faça um fork e clone o seu repositório
+
 cd istio-curso
 
 conda create -n istio-curso python=3
@@ -25,12 +29,13 @@ conda activate istio-curso
 
 conda install --file requirements.txt
 
-jupyter lab
+# Localize o arquivo de configuração do cluster e altere o valor da variável KUBECONFIG
+env KUBECONFIG=caminho/arquivo jupyter lab
 ```
 
 ## generic-services
 
-O curso utiliza a imagem pronta do generic-services - `kdop/generic-services` e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
+O curso utiliza a imagem pronta do generic-services - [exemplos/generic-services/py](exemplos/generic-services) e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
 
 ## Nossos planos
 
