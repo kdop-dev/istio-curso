@@ -7,3 +7,4 @@ notebook
 jupyterlab
 zsh-jupyter-kernel
 autopep8
+jwcrypto

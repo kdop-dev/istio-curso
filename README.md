@@ -15,6 +15,7 @@ Para iniciar o curso você precisa:
 * docker e kubernetes (para linux ou um cluster na nuvem)
 * python3 para executar o curso
 * conda para gerenciar ambientes de python
+* [jwkgen](https://github.com/rakutentech/jwkgen) para gerar certificados.
 
 ## Criando um ambiente para execução
 

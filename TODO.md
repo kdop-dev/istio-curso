@@ -8,11 +8,12 @@
 6. [ ] 07 - Video kiali com aplicação simul-shop
 7. [ ] 07 - Video jaeger com aplicação simul-shop
 8. [ ] 07 - Video grafana com aplicação simul-shop
-9. [ ] 11 - Cap. Gerenciamento de tráfego - parte 2
-10. [ ] 12 - Video kiali com e sem segurança
-11. [ ] 13 - Cap. Engenharia do caos
-12. [ ] 14 - Cap Istio VM
-13. [ ] 99 - Cap Encerramento
-14. [ ] XX - Adicionar marcações indicativas e revisar identidade visual
-15. [ ] XX - Revisão 1
-16. [ ] XX - Revisão 2
+9. [ ] 10 - Adicionar chamada api externa (http://worldclockapi.com/api/json/utc/now e/ou http://httpbin.org/) para serviço fora da malha. Ajustar exemplos.
+10. [ ] 11 - Cap. Gerenciamento de tráfego - parte 2
+11. [ ] 12 - Video kiali com e sem segurança
+12. [ ] 13 - Cap. Engenharia do caos
+13. [ ] 14 - Cap Istio VM
+14. [ ] 99 - Cap Encerramento
+15. [ ] XX - Adicionar marcações indicativas e revisar identidade visual
+16. [ ] XX - Revisão 1
+17. [ ] XX - Revisão 2

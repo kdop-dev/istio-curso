@@ -20,7 +20,7 @@ spec:
         image: kdop/generic-service:0.0.2
         env:
           - name: SPLIT_CALL_URL_LST
-            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s,http://credit.financial:8000/"
+            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s,http://credit.financial:8000/,http://httpbin.org/uuid"
           - name: APP
             value: "orders"
           - name: VERSION

@@ -93,7 +93,7 @@ Example:
 }
 ```
 
-- [ ] Configurable response code
+- [ ] Configurable response code - Add endpoint (run time) / env variable (config time) that allow to change the behavior (response code) of the service
 - [ ] Configurable method
 - [ ] Configurable sync / assync request
 - [ ] Simulation of micro front-end. `/` - web, `/api` - programming interface
