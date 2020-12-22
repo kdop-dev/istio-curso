@@ -23,7 +23,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders
-        image: kdop/generic-service:0.0.2
+        image: kdop/generic-service:0.0.3
         env:
           - name: APP
             value: "credit"

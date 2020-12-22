@@ -1,6 +1,6 @@
 from logging import info
 from typing import Optional
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import atexit
@@ -65,6 +65,14 @@ async def root():
     logging.info(f"opentracing: {carrier}")
     message = MessageOut(name="greetings", description="Hi there!", when=when, app=APP, version=VERSION)
     return message
+
+# return code
+@app.get("/r/{code}")
+async def resp(code: int):
+    when = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    carrier = await get_opentracing_span_headers()
+    logging.info(f"opentracing: {carrier}")
+    raise HTTPException(status_code=code, detail=f"{when} - ask for {code}")
 
 # Split
 # TODO: Return app, version, datetime

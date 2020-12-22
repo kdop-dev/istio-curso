@@ -1,6 +1,6 @@
 FROM python:3.8-buster
 
-RUN apt install dnsutils
+RUN apt-get update && apt-get install -y dnsutils httpie
 
 WORKDIR /app
 

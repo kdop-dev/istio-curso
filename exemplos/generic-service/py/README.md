@@ -31,7 +31,7 @@ docker run -d --rm \
 --hostname backend \
 --network my-net \
 --name backend \
-kdop/generic-service:0.0.1
+kdop/generic-service:0.0.3
 
 # front-end
 docker run -d --rm \
@@ -41,7 +41,7 @@ docker run -d --rm \
     -e SCHED_CALL_URL_LST=http://front-end:8000/s \
     -e SCHED_CALL_INTERVAL=10 \
     -e SPLIT_CALL_URL_LST=http://backend:8000 \
-    kdop/generic-service:0.0.1
+    kdop/generic-service:0.0.3
 ```
 
 ## Logs
@@ -93,8 +93,8 @@ Example:
 }
 ```
 
-- [ ] Configurable response code - Add endpoint (run time) / env variable (config time) that allow to change the behavior (response code) of the service
+- [x] Configurable response code - Add endpoint that allow to change the behavior (response code) of the service. Tag 0.0.3
 - [ ] Configurable method
 - [ ] Configurable sync / assync request
 - [ ] Simulation of micro front-end. `/` - web, `/api` - programming interface
-- [ ] Avaliar outras alternativas como [Hey](https://github.com/rakyll/hey)
+- [ ] Check other alternatives like [Hey](https://github.com/rakyll/hey)

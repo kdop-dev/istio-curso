@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-end
+  name: front-end-v1
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.2
+        image: kdop/generic-service:0.0.3
         env:
           - name: SCHED_CALL_INTERVAL
             value: "300"
@@ -48,7 +48,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.2
+        image: kdop/generic-service:0.0.3
         env:
           - name: SCHED_CALL_INTERVAL
             value: "300"
