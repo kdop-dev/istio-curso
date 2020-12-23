@@ -10,4 +10,5 @@ RUN pip install -r /app/requirements.txt
 
 EXPOSE 8000
 
-CMD ["/app/server.sh"]
+#CMD ["/app/server.sh"]
+CMD ["uvicorn", "--host=0.0.0.0", "--port=8000", "--workers=2", "--forwarded-allow-ips=*", "--proxy-headers", "main:app"]

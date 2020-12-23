@@ -17,42 +17,18 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
+        imagePullPolicy: Always
         env:
+          # - name: SCHED_CALL_URL_LST
+          #   value: "http://front-end:8000/s"
+          - name: SCHED_CALL_INTERVAL
+            value: "30"
           - name: SPLIT_CALL_URL_LST
-            value: "http://login:8000/r/500"
+            value: "http://login:8000/r?code=504&wait=20"
           - name: APP
             value: "front-end"
           - name: VERSION
             value: "v1"
-        ports:
-        - containerPort: 8080
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: front-end-v2
-spec:
-  selector:
-    matchLabels:
-      app: front-end
-      version: v2
-  template:
-    metadata:
-      labels:
-        app: front-end
-        version: v2
-    spec:
-      terminationGracePeriodSeconds: 5
-      containers:
-      - name: front-end
-        image: kdop/generic-service:0.0.3
-        env:
-          - name: SPLIT_CALL_URL_LST
-            value: "http://login:8000/r/500"
-          - name: APP
-            value: "front-end"
-          - name: VERSION
-            value: "v2"
         ports:
         - containerPort: 8080

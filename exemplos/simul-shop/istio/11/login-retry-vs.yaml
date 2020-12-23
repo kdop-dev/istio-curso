@@ -1,0 +1,51 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: login
+  namespace: default
+spec:
+  # hosts:
+  #   - "*"
+  # gateways:
+  # - default-gateway
+  # http:
+  # - match:
+  #   - uri:
+  #       prefix: /login
+  #   rewrite:
+  #     uri: /
+  #   route:
+  #   - destination:
+  #       host: login # FQDN completo ou abreviado
+  #       subset: v1
+  #   retries: # <-- Retentativas em caso de falha
+  #     attempts: 5
+  #     perTryTimeout: 5s
+  #     retryOn: 5xx
+  #   timeout: 20s
+
+  hosts:
+    - login
+  http:
+  - route:
+    - destination:
+        host: login # FQDN completo ou abreviado
+        subset: v1
+    retries: # <-- Retentativas em caso de falha
+      attempts: 3
+      perTryTimeout: 2s
+      retryOn: 5xx
+    
+
+  # http:
+  # - retries:
+  #     attempts: 3
+  #     perTryTimeout: 1s
+  #     retryOn: connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes,gateway-error
+  #   route:
+  #   - destination:
+  #       host: login
+  #       subset: v1
+  #     weight: 100
+  #   timeout: 5s

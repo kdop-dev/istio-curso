@@ -1,19 +1,19 @@
 # Generic Service
 
 ```bash
-CALL_SERVICES=orders,catalogue CALL_INTERVAL=1 uvicorn main:app --reload
+uvicorn main:app --reload
 ```
 
 ## Build
 
 ```bash
-docker build -t kdop/generic-service:0.0.1 .
+docker build -t kdop/generic-service:0.0.5 .
 ```
 
 ## Push to docker hub
 
 ```bash
-docker push kdop/generic-service:0.0.1
+docker push kdop/generic-service:0.0.5
 ```
 
 ## Run
@@ -31,7 +31,13 @@ docker run -d --rm \
 --hostname backend \
 --network my-net \
 --name backend \
-kdop/generic-service:0.0.3
+kdop/generic-service:0.0.5
+
+docker run --rm \
+--hostname backend \
+--network my-net \
+--name backend \
+kdop/generic-service:0.0.5
 
 # front-end
 docker run -d --rm \
@@ -41,7 +47,19 @@ docker run -d --rm \
     -e SCHED_CALL_URL_LST=http://front-end:8000/s \
     -e SCHED_CALL_INTERVAL=10 \
     -e SPLIT_CALL_URL_LST=http://backend:8000 \
-    kdop/generic-service:0.0.3
+    kdop/generic-service:0.0.5
+```
+
+Simulate error
+
+```bash
+docker run --rm \
+--hostname backend \
+--network my-net \
+--name backend \
+-e SCHED_CALL_URL_LST="http://backend:8000/r?code=504&wait=5" \
+-e SCHED_CALL_INTERVAL=5 \
+kdop/generic-service:0.0.5
 ```
 
 ## Logs
@@ -77,7 +95,7 @@ Example:
 }
 ```
 
-- [ ] Configurable delay
+- [x] Configurable delay. <uri>/r?code=<value>&wait=<value>. Example: http://localhost:8000/r?code=504&wait=10. Return status 504 after 10 seconds.
 - [ ] Configurable response payload size - field data
 
 Example:

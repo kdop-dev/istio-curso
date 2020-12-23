@@ -1,17 +1,15 @@
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: login
+  namespace: default
 spec:
   hosts:
-  - login
-  gateways:
-  - default-gateway
+    - login
   http:
   - route:
     - destination:
-        host: login
+        host: login # FQDN completo ou abreviado
         subset: v1
-    retries:
-      attempts: 10
-      perTryTimeout: 3s
+    timeout: 10s

@@ -17,7 +17,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
+        imagePullPolicy: Always
         env:
           - name: SCHED_CALL_URL_LST
             value: "http://front-end:8000/s"

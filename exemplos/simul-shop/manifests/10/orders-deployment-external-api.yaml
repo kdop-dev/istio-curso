@@ -17,7 +17,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
+        imagePullPolicy: Always
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s,http://credit.financial:8000/,http://httpbin.org/uuid"

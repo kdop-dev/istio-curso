@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: front-end
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: SCHED_CALL_INTERVAL
             value: "300"
@@ -48,7 +48,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: login
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "login"
@@ -75,7 +75,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: catalogue
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "catalogue"
@@ -102,7 +102,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s,http://credit.financial:8000/"
@@ -131,7 +131,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: orders-db
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "orders-db"
@@ -158,7 +158,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: shipping
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://queue:8000/"
@@ -187,7 +187,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: queue
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "queue"
@@ -214,7 +214,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: cart
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://cart-db:8000/"
@@ -243,7 +243,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: cart-db
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "cart-db"
@@ -270,7 +270,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: payment
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "payment"
@@ -297,7 +297,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: accounts
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: SPLIT_CALL_URL_LST
             value: "http://accounts-db:8000/"
@@ -326,7 +326,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: accounts-db
-        image: kdop/generic-service:0.0.3
+        image: kdop/generic-service:0.0.5
         env:
           - name: APP
             value: "accounts-db"

@@ -1,13 +1,12 @@
-from logging import info
+#from logging import info
+import logging
 from typing import Optional
 from fastapi import FastAPI, Request, HTTPException
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import atexit
-import os
+import os, time, datetime
 import requests
-import logging
-import datetime
 from pydantic import BaseModel
 from fastapi_opentracing import get_opentracing_span_headers
 from fastapi_opentracing.middleware import OpenTracingMiddleware
@@ -67,12 +66,14 @@ async def root():
     return message
 
 # return code
-@app.get("/r/{code}")
-async def resp(code: int):
+@app.get("/r")
+async def resp(code: int = 200, wait: int = 0):
     when = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     carrier = await get_opentracing_span_headers()
     logging.info(f"opentracing: {carrier}")
-    raise HTTPException(status_code=code, detail=f"{when} - ask for {code}")
+    time.sleep(wait)
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    raise HTTPException(status_code=code, detail=f"At {when} this request asks for {code} and waits for {wait}s and now is {now}.")
 
 # Split
 # TODO: Return app, version, datetime
