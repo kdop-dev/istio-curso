@@ -16,7 +16,7 @@ spec:
 kind: DestinationRule
 apiVersion: networking.istio.io/v1alpha3
 metadata:
-  name: front-end-drs
+  name: front-end
   namespace: default
 spec:
   host: front-end.default.svc.cluster.local

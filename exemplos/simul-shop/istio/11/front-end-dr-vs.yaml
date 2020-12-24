@@ -6,13 +6,13 @@ metadata:
   namespace: default
 spec:
   host: front-end
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
   subsets:
-    - labels:
-        version: v1
-      name: v1
-    - labels:
-        version: v2
-      name: v2
+    - name: all-pods
+      labels: 
+        app: front-end
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -33,8 +33,8 @@ spec:
     route:
     - destination:
         host: front-end # FQDN completo ou abreviado
-        subset: v1
+        subset: all-pods
   - route: # <-- rota padrão
     - destination:
         host: front-end 
-        subset: v1
+        subset: all-pods

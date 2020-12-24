@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-v2
+spec:
+  selector:
+    matchLabels:
+      app: orders
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: orders
+        version: v2
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: orders
+        image: kdop/generic-service:0.0.5
+        imagePullPolicy: Always
+        env:
+          - name: SPLIT_CALL_URL_LST
+            value: "http://shipping:8000/s,http://cart:8000/s,http://orders-db:8000/,http://payment:8000/,http://accounts:8000/s"
+          - name: APP
+            value: "orders"
+          - name: VERSION
+            value: "v2"
+        ports:
+        - containerPort: 8080

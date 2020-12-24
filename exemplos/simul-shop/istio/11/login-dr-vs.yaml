@@ -30,4 +30,3 @@ spec:
     - destination:
         host: login # FQDN completo ou abreviado
         subset: v1
-
