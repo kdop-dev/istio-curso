@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: WorkloadEntry
+metadata:
+  labels:
+    app: pegasus-pay
+  name: pegasus-pay
+  namespace: legacy
+spec:
+  address: 10.240.0.115
+  labels:
+    app: pegasus-pay
+    service.istio.io/canonical-name: pegasus-pay
+    service.istio.io/canonical-version: latest
+  serviceAccount: legacy-pegasus

@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: WorkloadGroup
+metadata:
+  name: pegasus-pay
+  namespace: legacy
+spec:
+  metadata:
+    annotations: {}
+    labels:
+      app: pegasus-pay
+  template:
+    ports: {}
+    serviceAccount: legacy-pegasus
