@@ -83,3 +83,4 @@ Referência consultadas durante o desenvolvimento desse curso.
 79. [Icons - The noun project](https://thenounproject.com/)
 80. [Martin Fowler - Microservices](https://martinfowler.com/articles/microservices.html)
 81. [Thoughtworks - Technology Radar](https://www.thoughtworks.com/radar)
+82. [How to Integrate Virtual Machines into Istio Service Mesh](https://thenewstack.io/how-to-integrate-virtual-machines-into-istio-service-mesh/)
