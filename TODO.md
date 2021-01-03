@@ -5,9 +5,9 @@
 3. [X] 03 - Video visão geral kiali
 4. [X] 05 - Imagem sidecar
 5. [X] 06 - Video Como Istio funciona
-6. [ ] 07 - Video kiali com aplicação simul-shop
-7. [ ] 07 - Video jaeger com aplicação simul-shop
-8. [ ] 07 - Video grafana com aplicação simul-shop
+6. [X] 07 - Video kiali com aplicação simul-shop
+7. [X] 07 - Video jaeger com aplicação simul-shop
+8. [X] 07 - Video grafana com aplicação simul-shop
 9. [ ] 10 - Adicionar chamada api externa (http://worldclockapi.com/api/json/utc/now e/ou http://httpbin.org/) para serviço fora da malha. Ajustar exemplos.
 10. [X] 11 - Cap. Gerenciamento de tráfego - parte 2
 11. [ ] 12 - Video kiali com e sem segurança
