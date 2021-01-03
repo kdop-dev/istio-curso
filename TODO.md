@@ -2,9 +2,9 @@
 
 1. [X] 00 - Remover em desenvolvimento
 2. [X] 00 - Adicionar capa
-3. [ ] 03 - Video visão geral kiali
+3. [X] 03 - Video visão geral kiali
 4. [X] 05 - Imagem sidecar
-5. [ ] 06 - Video Como Istio funciona
+5. [X] 06 - Video Como Istio funciona
 6. [ ] 07 - Video kiali com aplicação simul-shop
 7. [ ] 07 - Video jaeger com aplicação simul-shop
 8. [ ] 07 - Video grafana com aplicação simul-shop
