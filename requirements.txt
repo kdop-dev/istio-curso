@@ -8,3 +8,6 @@ jupyterlab
 zsh-jupyter-kernel
 autopep8
 jwcrypto
+# to convert notebooks into pdf. Needs pandoc on OS https://pandoc.org/installing.html e latex (mactex, xelatex)
+nb_pdf_template
+nbconvert
