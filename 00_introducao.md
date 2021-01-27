@@ -4,7 +4,7 @@
 
 ## Sobre este curso
 
-Neste curso você aprenderá os conceitos e práticas, básicas e avançadas de Istio Service Mesh. 
+Neste curso você aprenderá os conceitos e práticas, básicas e avançadas de Istio Service Mesh.
 
 Com Istio e Kubernetes, você levará seus desenvolvimentos à outro patamar.
 
@@ -24,7 +24,7 @@ Atualizado para o Istio 1.8.2
 
 A malha de serviço é uma camada de infraestrutura dedicada para lidar com a comunicação serviço à serviço a fim de torná-la visível, gerenciável e controlada. A implementação depende da solução, mas no Istio, cada malha de serviço é implementada como uma série de _proxies_.
 
-Com uma malha de serviço, cada endpoint de aplicativo (seja um contêiner, um pod ou um host) é configurado para direcionar o tráfego para um _proxy_ local (instalado como um contêiner secundário, por exemplo). Esse proxy local gerencia coisas como lógica de novas tentativas, mecanismos de criptografia, regras de direcionamento personalizadas, descoberta de serviço, entre outras. 
+Com uma malha de serviço, cada endpoint de aplicativo (seja um contêiner, um pod ou um host) é configurado para direcionar o tráfego para um _proxy_ local (instalado como um contêiner secundário, por exemplo). Esse proxy local gerencia coisas como lógica de novas tentativas, mecanismos de criptografia, regras de direcionamento personalizadas, descoberta de serviço, entre outras.
 
 Uma coleção desses proxies forma uma “malha” de serviços que agora compartilham propriedades comuns de gerenciamento de tráfego de rede. Esses _proxies_ podem ser controlados a partir de um plano de controle centralizado onde os operadores podem compor uma política que afeta o comportamento de toda a malha.
 
