@@ -105,6 +105,12 @@ Selecione o ícone salvar :floppy_disk: no canto superior direito da área.
 
 Com essa configuração, dá próxima vez que você selecionar um arquivo _md_, ele será aberto no modo _preview_ :clap:.
 
+## Módulos
+
+Os exemplos estão em um repositório separado como submodulo
+
+`git submodule add git@github.com:kdop-dev/istio-curso-files.git assets/`
+
 ### generic-services
 
 O curso utiliza a imagem pronta do generic-services - [exemplos/generic-services/py](exemplos/generic-services) e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
