@@ -2,6 +2,8 @@
 
 # Istio avançado para iniciantes (The Advanced Istio for Beginners)
 
+Lançamento: Versão [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
+
 ## Conteúdo
 
 A curva de aprendizado do Istio é relativamente íngreme - por isso projetamos este curso para ser o mais claro e compreensível possível e espero que com as demonstrações práticas você também se divirta ao longo do caminho
@@ -39,8 +41,8 @@ A curva de aprendizado do Istio é relativamente íngreme - por isso projetamos 
 Há três versões deste curso:
 
 * [Github - asantos2000/katacoda-scenarios](https://github.com/asantos2000/katacoda-scenarios)
-* [Katacoda - Get Started with Istio and Kubernetes - Estimado: 25/01/2021](https://www.katacoda.com/adsantos/courses/istio/deploy-istio-on-kubernetes)
-* [Udemy - Istio avançado para iniciantes - Anderson/ Daniel e Leonardo - Estimado 01/03/2021]()
+* [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
+* [Udemy - Istio avançado para iniciantes - Anderson/ Daniel e Leonardo - Estimado 20/03/2021]()
 
 ## Curso no Github
 
