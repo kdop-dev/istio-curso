@@ -115,7 +115,7 @@ Os exemplos estão em um repositório separado como submodulo
 
 ### generic-services
 
-O curso utiliza a imagem pronta do generic-services - [exemplos/generic-services/py](exemplos/generic-services) e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
+O curso utiliza a imagem pronta do generic-services - [assets/exemplos/generic-services/py](assets/exemplos/generic-services) e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [assets/exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
 
 ## Nossos planos
 

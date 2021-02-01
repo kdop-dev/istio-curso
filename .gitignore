@@ -2,12 +2,7 @@ istio-1.*
 .vscode
 .DS_Store
 .docker
-exemplos/gcp-microservices-demo
-exemplos/microservices-demo
-exemplos/load-test
-exemplos/my-app
-exemplos/micro-sock-src
-exemplos/simul-shop/certs/
+assets/
 __pycache__
 .kube
 .ipynb_checkpoints
