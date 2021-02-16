@@ -84,7 +84,7 @@ O Istio, desde a versão 1.6 simplificou sua arquitetura reunindo o Pilot, Citad
 
 ![arquitetura istio](media/istio-arch.png)
 
-[Arquitetura do Istio na versão 1.8.x](https://istio.io/latest/docs/ops/deployment/architecture/)
+[Arquitetura do Istio na versão 1.9.x](https://istio.io/latest/docs/ops/deployment/architecture/)
 
 A arquitetura do Istio está dividida em dois grandes blocos:
 
