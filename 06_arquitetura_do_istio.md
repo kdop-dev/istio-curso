@@ -97,9 +97,9 @@ Então o Istio é composto de duas aplicações:
 #### Envoy
 
 Como já vimos é injetado pelo `istiod` quando fazemos a instalação da nossa aplicação em um _namesapce_ que tem a injeção automática, através do comando `istioctl kube-inject` ou ainda adicionamos o container na nossa configuração.
-    
+
 Suas principais funcionalidades são:
-    
+
 * Descobrimento dinâmico de serviços
 * Balanceamento de carga
 * Terminação TLS
