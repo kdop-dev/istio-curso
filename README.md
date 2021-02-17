@@ -2,7 +2,9 @@
 
 # Istio avançado para iniciantes (The Advanced Istio for Beginners)
 
-Lançamento: Versão [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
+🚀 Lançamento: Versão [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
+
+⛵ Atualizado para o [Istio 1.9.0](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
 
 ## Conteúdo
 
