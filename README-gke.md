@@ -55,6 +55,7 @@ Você pode reduzir custos parando o cluster quando não estiver usando e inician
 
 ```bash
 # Reduzir para zero. Reduz custos
+# https://cloud.google.com/kubernetes-engine/docs/how-to/managing-clusters#resizing_clusters
 gcloud container clusters resize $CLUSTER_NAME --zone $ZONE --node-pool $NODE_POLL \
     --num-nodes $MIN_NODES
 
