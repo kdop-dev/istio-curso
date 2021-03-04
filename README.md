@@ -56,7 +56,7 @@ git clone https://github.com/kdop-dev/istio-curso.git
 
 Para iniciar o curso você precisa:
 
-* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem.
+* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem (Para criar na Google Cloud, acesse [README-gke](./README-gke.md)).
 * Uma notebook, desktop ou máquina virtual para executar o curso
 * linux (ou wsl2)
 * docker-desktop (win ou mac)
