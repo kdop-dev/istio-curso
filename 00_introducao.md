@@ -94,3 +94,5 @@ Nós trabalhamos em tempo integral para grandes empresas, onde temos a oportunid
 No curso do nosso trabalho, como todos, fazemos muitos amigos e aprendemos muito com eles. Nossos cursos são um agregado das nossas experiências e troca de conhecimentos com nossos colegas e tem por objetivo exclusivo, retribuir essas oportunidades e fazer novos amigos.
 
 Contribua conosco, de um feedback honesto e nos ajude a tornar esse curso mais útil para você e seus amigos.
+
+:rocket: Então está na hora de começar [Parte 1 - Preparação](01_preparacao.md).

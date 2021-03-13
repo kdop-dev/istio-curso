@@ -10,7 +10,7 @@
 
 A curva de aprendizado do Istio é relativamente íngreme - por isso projetamos este curso para ser o mais claro e compreensível possível e espero que com as demonstrações práticas você também se divirta ao longo do caminho
 
-- Na [PARTE 1](./01_preparacao.ipynb) instalaremos as ferramentas necessárias na sua máquina windows, mac e linux, tais como:
+- Na [PARTE 1](./01_preparacao.md) instalaremos as ferramentas necessárias na sua máquina windows, mac e linux, tais como:
   - kubectl - linha de comando para interagir com o kubernetes
   - istioctl - utilitário de linha de comando para instalar e configurar a instalação do istio e acessar seus dashboards e configurações.
   - stern - ferrameta para acessar logs dos containers
@@ -46,84 +46,15 @@ Há três versões deste curso:
 * [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
 * [Udemy - Istio avançado para iniciantes - Anderson/ Daniel e Leonardo - Estimado 20/03/2021]()
 
-## Curso no Github
+## Executando o curso
 
-Para obter os artefatos necessários para o curso, clone esse repositório:
+Clone ou faça download deste repositório:
 
-```bash
-git clone https://github.com/kdop-dev/istio-curso.git
-```
+`git clone https://github.com/kdop-dev/istio-curso.git`
 
-Para iniciar o curso você precisa:
+Siga para as primeiras lições [Introdução](./00_introducao.md) e [Parte 1 - Preparação](01_preparacao.md).
 
-* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem (Para criar na Google Cloud, acesse [README-gke](./README-gke.md));
-* Uma notebook, desktop ou máquina virtual para executar o curso;
-* linux (ou wsl2);
-* docker-desktop (win ou mac);
-* docker e kubernetes (para linux ou um cluster na nuvem);
-* [miniconda](https://docs.conda.io/en/latest/miniconda.html) para python 3.x, recomendado para gerenciar ambientes de python;
-* python 3.x para executar o curso. Requerido, verifique se seu sistema já tem uma versão instalada. Ele também pode ser instalado com miniconda ou seguindo as instruções da página do [python](https://www.python.org/downloads/);
-* [jwkgen](https://github.com/rakutentech/jwkgen) para gerar certificados.
-
-### Criando um ambiente para execução
-
-```bash
-git clone https://github.com/kdop-dev/istio-curso.git # Ou faça um fork e clone o seu repositório
-
-cd istio-curso
-
-# Instale miniconda ou apenas python 3
-# [Requerido] Necessário python versão 3.x
-python -V
-
-# [Opcional] Se instalou miniconda
-conda create -n istio-curso python=3
-
-conda activate istio-curso
-
-# [Requerido] Instalar as dependências
-conda install --file requirements.txt
-# Alternativa sem miniconda 
-# pip install -r requirements.txt
-
-# [Requerido] Habilitar o kernel de bash para jupyter
-python -m bash_kernel.install
-
-# [Opcional] Localize o arquivo de configuração do cluster e altere o valor da variável KUBECONFIG
-# Não necessário se já foi configurado por outro método (Ex: Atualizada a configuração pelo cli do clusters de nuvem, minikube ou doker-desktop). Ver PARTE 1 - Preparação. 
-# KUBECONFIG=~/.kube/config jupyter lab
-jupyter lab
-```
-
-#### Jupyter lab markdown preview (Opcional)
-
-Por padrão o jupyter lab ira abrir os arquivos _markdown_ no modo de edição, mas você pode selecionar abri-lo no modo _preview_ clicando com o botão direito sobre o nome do arquivo.
-
-Para este curso, vamos sugerir que você altere essa configuração padrão do jupyter lab.
-
-Abra o jupyter lab (`jupyter lab`), se já não estiver aberto, selecione no menu superior _Settings_ &#8594; _Advanced Settings Editor_ e na área _User Preferences_ inclua o seguinte código:
-
-```json
-{
-    defaultViewers: {
-        markdown: "Markdown Preview"
-    }
-}
-```
-
-Selecione o ícone salvar :floppy_disk: no canto superior direito da área.
-
-Com essa configuração, dá próxima vez que você selecionar um arquivo _md_, ele será aberto no modo _preview_ :clap:.
-
-## Módulos
-
-Os exemplos estão em um repositório separado como submodulo
-
-`git submodule add git@github.com:kdop-dev/istio-curso-files.git assets/`
-
-### generic-services
-
-O curso utiliza a imagem pronta do generic-services - [assets/exemplos/generic-services/py](assets/exemplos/generic-services) e não é necessário nenhum passo adicional para utilizá-la, porém, se você desejar modificá-la e criar sua própria imagem, o código-fonte, bem como instruções para construção e entrega, estão em [assets/exemplos/generic-services/py/README.md](exemplos/generic-service/py/README.md)
+> Use o [VS-Code](https://code.visualstudio.com/) e abra os arquivos markdown em preview.
 
 ## Nossos planos
 
@@ -131,3 +62,4 @@ O curso utiliza a imagem pronta do generic-services - [assets/exemplos/generic-s
 - [X] [Katacoda](https://www.katacoda.com/) - Fev/2020
 - [ ] [mybinder](https://mybinder.org/) - Previsão: Mar/2020
 - [ ] [Udemy](https://udemy.com) - Previsão: Mar/2020
+
