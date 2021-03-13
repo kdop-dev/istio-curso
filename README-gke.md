@@ -4,9 +4,15 @@ Uma alternativa para acompanhar este curso é cria um cluster de kubernetes (GKE
 
 Se essa é a primeira vez que você acessa a GCP você terá um bonús de trezentos dolares para gastar em noventa dias, mais do que suficiente para realizar esse curso, porém, mesmo que você já tenha uma conta na GCP, o GKE tem um [uso gratuíto](https://cloud.google.com/free/docs/gcp-free-tier#always-free-usage-limits) de USD 74,40 por mês por conta de faturamento.
 
-COnfiguraremos o nosso cluster para ficar dentro da faixa de uso livre, mas recomendamos que você acompanhe, no painle de faturamento, os custos de perto para evitar surpresas.
+Configuraremos o nosso cluster para ficar dentro da faixa de uso livre, mas recomendamos que você acompanhe, no painle de faturamento, os custos de perto para evitar surpresas.
 
-Você precisará de uma conta Google e acessar a [GCP](https://cloud.google.com/) e seguir com a opção gratuita. Caso já tenha uma conta, abara um terminal (ou cloudshell) e conecte na sua conta / projeto.
+Você precisará de uma conta Google Cloud (GCP), para obtê-la acesse a <https://cloud.google.com/> e segua com a opção gratuita. 
+
+Você também precisará do cli da GCP, o `gcloud`, para instalá-lo, siga as instruções em <https://cloud.google.com/sdk/docs/install>.
+
+> Se preferir utilize o __cloud shell__ no console do GCP.
+
+Caso já tenha uma conta e o cli instalado, abra um terminal (ou cloudshell) e conecte na sua conta / projeto.
 
 ```bash
 # Autenticar na GCP (não necessário para cloudshell)
@@ -15,9 +21,10 @@ gcloud auth login
 # Lista os projetos que você tem acesso
 gcloud projects list --format="value(projectId)"
 
-# Define um projeto onde o cluster será criado
+# Define um projeto onde o cluster será criado, caso necessário crie um projeto (use o painel da GCP)
 gcloud config set project kdop-dev
 
+# EXECUTE APENAS UMA VEZ
 # Criar um cluster com 8 vCPU and 16MB memory
 # https://istio.io/latest/docs/setup/platform-setup/gke/
 # Estimated cost: 
@@ -43,8 +50,14 @@ gcloud container clusters create $CLUSTER_NAME \
 --zone $ZONE \
 --project $PROJECT_ID
 
-# Obter credenciais
+# Obter credenciais do seu cluster
 gcloud container clusters get-credentials $CLUSTER_NAME --zone $ZONE --project $PROJECT_ID
+
+# Instalando kubectl
+sudo apt-get install kubectl
+
+# Teste
+kubectl get nodes
 ```
 
 ## Manutenção do cluster

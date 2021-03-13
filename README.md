@@ -56,13 +56,13 @@ git clone https://github.com/kdop-dev/istio-curso.git
 
 Para iniciar o curso você precisa:
 
-* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem (Para criar na Google Cloud, acesse [README-gke](./README-gke.md)).
-* Uma notebook, desktop ou máquina virtual para executar o curso
-* linux (ou wsl2)
-* docker-desktop (win ou mac)
-* docker e kubernetes (para linux ou um cluster na nuvem)
-* python3 para executar o curso
-* conda para gerenciar ambientes de python
+* Acesso a uma infra para o cluster, pode ser um notebook com pelo menos 16GB de RAM ou uma conta ou assinatura de uma nuvem (Para criar na Google Cloud, acesse [README-gke](./README-gke.md));
+* Uma notebook, desktop ou máquina virtual para executar o curso;
+* linux (ou wsl2);
+* docker-desktop (win ou mac);
+* docker e kubernetes (para linux ou um cluster na nuvem);
+* [miniconda](https://docs.conda.io/en/latest/miniconda.html) para python 3.x, recomendado para gerenciar ambientes de python;
+* python 3.x para executar o curso. Requerido, verifique se seu sistema já tem uma versão instalada. Ele também pode ser instalado com miniconda ou seguindo as instruções da página do [python](https://www.python.org/downloads/);
 * [jwkgen](https://github.com/rakutentech/jwkgen) para gerar certificados.
 
 ### Criando um ambiente para execução
@@ -72,21 +72,27 @@ git clone https://github.com/kdop-dev/istio-curso.git # Ou faça um fork e clone
 
 cd istio-curso
 
+# Instale miniconda ou apenas python 3
+# [Requerido] Necessário python versão 3.x
 python -V
-# Python 3.x
 
+# [Opcional] Se instalou miniconda
 conda create -n istio-curso python=3
 
 conda activate istio-curso
 
+# [Requerido] Instalar as dependências
 conda install --file requirements.txt
+# Alternativa sem miniconda 
+# pip install -r requirements.txt
 
+# [Requerido] Habilitar o kernel de bash para jupyter
 python -m bash_kernel.install
 
 # [Opcional] Localize o arquivo de configuração do cluster e altere o valor da variável KUBECONFIG
-# Não necessário para docker-desktop
-# jupyter lab
-KUBECONFIG=~/.kube/config jupyter lab
+# Não necessário se já foi configurado por outro método (Ex: Atualizada a configuração pelo cli do clusters de nuvem, minikube ou doker-desktop). Ver PARTE 1 - Preparação. 
+# KUBECONFIG=~/.kube/config jupyter lab
+jupyter lab
 ```
 
 #### Jupyter lab markdown preview (Opcional)
