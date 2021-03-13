@@ -18,7 +18,7 @@ Nossa didática será introduzir os temas de forma simples e rapidamente apresen
 
 ## Descrição
 
-⛵ Atualizado para o [Istio 1.9.0](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
+⛵ Atualizado para o [Istio 1.9.1](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
 
 [Istio](https://istio.io/) é uma plataforma de malha de serviço de [código aberto](https://pt.wikipedia.org/wiki/C%C3%B3digo_aberto) que fornece maneiras de controlar e monitorar como os serviços se comunicam. Se você desenvolve ou pretende desenvolver arquiteturas orientadas à serviços e utiliza [kubernetes](https://kubernetes.io/), precisa conhecê-lo! Com este curso prático, você ganhará experiência na execução de suas próprias malhas de serviço com Istio.
 
