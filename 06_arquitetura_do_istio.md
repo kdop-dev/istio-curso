@@ -1,5 +1,7 @@
 # Arquitetura do Istio
 
+Nesta seção discutiremos em detalhes a arquitetura do Istio e como ela complementa a arquitetura das suas aplicações.
+
 Você já começou a ter uma idéia do que o Istio é capaz e nas próximas seções iremos desvendar mais e mais das suas funcionalidades, porém ainda não discutimos como o Istio funciona, como é  a sua arquitetura.
 
 Antes de discutir a arquitetura do Istio é importante que você saibe que ele não é a única implementação desse tipo, atualmente há diversas implementações, tais como:

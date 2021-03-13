@@ -55,14 +55,13 @@ Você aprenderá em detalhes:
 
 * Gestão de tráfego
 * Telemetria
-* Visualização (com Kiali)
-* Rastreamento distribuído (com Jaeger)
+* Visualização da malha de serviços (com Kiali)
+* Rastreamento de logs distribuído (com Jaeger)
 * Métricas com Grafana
 * Como implantar versões canário
 * Como fazer "Dark Releases"
-* Istio _VirtualServices_ and _DestinationRules_
 * Balanceamento de carga e afinidade de sessão
-* Gateways
+* Como controlar o tráfego para dentro e fora da malha com Gateways
 * Teste de resiliência com injeção de falha
 * Interrupção de circuito
 * Protegendo o tráfego do cluster com Mutual TLS (mTLS)
@@ -74,7 +73,7 @@ Em poucos meses, desde que começamos a desenvolver esse curso, o Istio já rece
 
 ## Sobre os autores
 
-[Anderson Santos](https://www.linkedin.com/in/adsantos/) - é um apaixonado engenheiro de software, palestrante e professor, com quase três décadas de experiência em Dev, Ops, DevOps e engenharia de software. Atualmente, ele ministra vários cursos sobre Kubernetes e Istio e dá palestras corporativas sobre desenvolvimento e operações de software. Anderson tem experiência em diversos setores da industria, sendo os últimos dez anos, nos setores de telecomunicações e educação. Desde 1998 auxilía seus clientes na tomada de decisão, implantação e operação de processos, arquiteturas e tecnologias para o desenvolvimento e modernização de software em núvens híbridas e de oferta pública.
+[Anderson Santos](https://www.linkedin.com/in/adsantos/) - é um apaixonado engenheiro de software, palestrante e professor, com quase três décadas de experiência em Dev, Ops, DevOps e engenharia de software. Atualmente, ele ministra vários cursos sobre Kubernetes e Istio e dá palestras corporativas sobre desenvolvimento e operações de software. Anderson tem experiência em diversos setores da indústria, sendo os últimos dez anos, nos setores de telecomunicações e educação. Desde 1998 auxilia seus clientes na tomada de decisão, implantação e operação de processos, arquiteturas e tecnologias para o desenvolvimento e modernização de software em nuvens híbridas e de oferta pública..
 
 [Leonardo Osse](https://www.linkedin.com/in/leonardo-osse-a4423128/) é desenvolvedor com grande experiência nas nuvem AWS e Azure. Tem trabalhando no auxilio e formação técnica de equipes ágeis no setor de educação.
 
@@ -82,9 +81,11 @@ Em poucos meses, desde que começamos a desenvolver esse curso, o Istio já rece
 
 ## A quem se destina este curso
 
-Qualquer desenvolvedor que deseja aprender o que o Istio pode fazer para seus projetos.
+Desenvolvedores que desejam aprender o que o Istio pode fazer para seus projetos.
 
 Qualquer pessoa que já tentou entender o Istio, mas teve dificuldades com a documentação.
+
+Arquitetos de Software que estejam projetando sistemas distribuídos (Exemplo: microsserviços)
 
 ## Por que é de graça?
 
