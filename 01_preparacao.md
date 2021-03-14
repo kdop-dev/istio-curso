@@ -159,7 +159,7 @@ Por padrão o jupyter lab ira abrir os arquivos _markdown_ no modo de edição, 
 
 Para este curso, vamos sugerir que você altere essa configuração padrão do jupyter lab.
 
-Abra o jupyter lab (`jupyter lab`), se já não estiver aberto, selecione no menu superior _Settings_ &#8594; _Advanced Settings Editor_ e na área _User Preferences_ inclua o seguinte código:
+Abra o jupyter lab (`jupyter lab`), se já não estiver aberto, selecione no menu superior _Settings_ | _Advanced Settings Editor_, no menu esquerdo selecione _Document Manager_ e na área _User Preferences_ inclua o seguinte código:
 
 ```json
 {
