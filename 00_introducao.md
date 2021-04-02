@@ -18,7 +18,7 @@ Nossa didática será introduzir os temas de forma simples e rapidamente apresen
 
 ## Descrição
 
-⛵ Atualizado para o [Istio 1.9.1](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
+⛵ Atualizado para o [Istio 1.9.2](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
 
 [Istio](https://istio.io/) é uma plataforma de malha de serviço de [código aberto](https://pt.wikipedia.org/wiki/C%C3%B3digo_aberto) que fornece maneiras de controlar e monitorar como os serviços se comunicam. Se você desenvolve ou pretende desenvolver arquiteturas orientadas à serviços e utiliza [kubernetes](https://kubernetes.io/), precisa conhecê-lo! Com este curso prático, você ganhará experiência na execução de suas próprias malhas de serviço com Istio.
 
@@ -73,7 +73,9 @@ Em poucos meses, desde que começamos a desenvolver esse curso, o Istio já rece
 
 ## Sobre os autores
 
-[Anderson Santos](https://www.linkedin.com/in/adsantos/) - é um apaixonado engenheiro de software, palestrante e professor, com quase três décadas de experiência em Dev, Ops, DevOps e engenharia de software. Atualmente, ele ministra vários cursos sobre Kubernetes e Istio e dá palestras corporativas sobre desenvolvimento e operações de software. Anderson tem experiência em diversos setores da indústria, sendo os últimos dez anos, nos setores de telecomunicações e educação. Desde 1998 auxilia seus clientes na tomada de decisão, implantação e operação de processos, arquiteturas e tecnologias para o desenvolvimento e modernização de software em nuvens híbridas e de oferta pública..
+[Anderson Santos](https://www.linkedin.com/in/adsantos/) - é um engenheiro de software, apaixonado por tecnologia, palestrante e professor, com quase três décadas de experiência em Dev, Ops, DevOps, arquitetura e engenharia de software. Atualmente trabalha em TI para o setor de educação e ministra cursos corporativos sobre Kubernetes e Istio e palestras sobre arquitetura, desenvolvimento e operação de software em larga escala.
+
+Anderson tem experiência em diversos setores da indústria, sendo os últimos dez anos, nos setores de telecomunicações e educação. Desde 1998 auxilia seus clientes na tomada de decisão implantação e operação de processos, arquiteturas e tecnologias para o desenvolvimento e modernização de software para nuvem.
 
 [Leonardo Osse](https://www.linkedin.com/in/leonardo-osse-a4423128/) é desenvolvedor com grande experiência nas nuvem AWS e Azure. Tem trabalhando no auxilio e formação técnica de equipes ágeis no setor de educação.
 
