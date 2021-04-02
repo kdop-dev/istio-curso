@@ -12,6 +12,7 @@ Se você tem acesso a um nuvem e pode criar um cluster de kubernetes, esta é um
 
 ## Linux e WSL2
 
+* [Instalar e configurar o terminal do Windows](https://docs.microsoft.com/pt-br/windows/terminal/get-started)
 * [Guia de instalação do Subsistema Windows para Linux para Windows 10](https://docs.microsoft.com/pt-br/windows/wsl/install-win10)
 * [Introdução ao uso de Visual Studio Code com o subsistema do Windows para Linux](https://docs.microsoft.com/pt-br/windows/wsl/tutorials/wsl-vscode)
 
