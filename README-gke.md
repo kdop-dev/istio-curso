@@ -4,9 +4,9 @@ Uma alternativa para acompanhar este curso é cria um cluster de kubernetes (GKE
 
 Se essa é a primeira vez que você acessa a GCP você terá um bonús de trezentos dolares para gastar em noventa dias, mais do que suficiente para realizar esse curso, porém, mesmo que você já tenha uma conta na GCP, o GKE tem um [uso gratuíto](https://cloud.google.com/free/docs/gcp-free-tier#always-free-usage-limits) de USD 74,40 por mês por conta de faturamento.
 
-Configuraremos o nosso cluster para ficar dentro da faixa de uso livre, mas recomendamos que você acompanhe, no painle de faturamento, os custos de perto para evitar surpresas.
+[Aviso] Configuraremos o nosso cluster para ficar dentro da faixa de uso livre, mas recomendamos que você acompanhe, no painel de faturamento, os custos de perto para evitar surpresas.
 
-Você precisará de uma conta Google Cloud (GCP), para obtê-la acesse a <https://cloud.google.com/> e segua com a opção gratuita. 
+Você precisará de uma conta Google Cloud (GCP), para obtê-la acesse a <https://cloud.google.com/> e segua com a opção gratuita.
 
 Você também precisará do cli da GCP, o `gcloud`, para instalá-lo, siga as instruções em <https://cloud.google.com/sdk/docs/install>.
 
@@ -21,8 +21,11 @@ gcloud auth login
 # Lista os projetos que você tem acesso
 gcloud projects list --format="value(projectId)"
 
+# Escolha o projeto e ajuste a variável com o valor
+export PROJECT_ID=kdop-dev
+
 # Define um projeto onde o cluster será criado, caso necessário crie um projeto (use o painel da GCP)
-gcloud config set project kdop-dev
+gcloud config set project $PROJECT_ID
 
 # EXECUTE APENAS UMA VEZ
 # Criar um cluster com 8 vCPU and 16MB memory
@@ -64,7 +67,7 @@ kubectl get nodes
 
 Você pode reduzir custos parando o cluster quando não estiver usando e iniciando novamente quando for utilizá-lo. As operações de escalar para baixo e para cima controlam quantos nós (máquinas virtuais no caso do cluster padrão) serão iniciados e, por consequência, cobrados.
 
-> Essas operações podem demorar alguns minutos e eventualmente terminar por tempo esgotado (timeout), mas o processo continuará, verifique no painel se o cluster foi escalado corretamente.
+> Essas operações podem demorar alguns minutos e eventualmente terminar por tempo esgotado (timeout), mas o processo continuará no plano de fundo, verifique no painel se o cluster foi dimensionado corretamente.
 
 ```bash
 # Reduzir para zero. Reduz custos
@@ -100,3 +103,17 @@ kubectl get pods
 # payment-64b6447b79-v4s4z        0/2     Pending   0          97m
 # shipping-8d4fc666c-q27s8        0/2     Pending   0          97m
 ```
+
+Quando você dimensionar para cima novamente, os PODs voltarão ao estado `Running`.
+
+[Aviso] E que avisa amigoa é, não esqueça de parar o cluster quando não estiver usando e excluí-lo quando não precisar mais.
+
+```bash
+# Lista os cluster disponíveis
+gcloud container clusters list --zone $ZONE
+
+# Exclui o cluster
+gcloud container clusters delete $CLUSTER_NAME --zone $ZONE
+```
+
+E é isso, agora temos um cluster de kubernetes e acesso a ele.
