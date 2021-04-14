@@ -8,8 +8,9 @@ Antes de discutir a arquitetura do Istio é importante que você saibe que ele n
 
 * [Consul](https://www.consul.io/) - Desenvolvido pela [Hashicorp](https://www.hashicorp.com/), é uma solução de código aberto de malha de serviço que fornece um plano de controle completo com descoberta de serviço, configuração e funcionalidade de segmentação. Tem uma arquitetura parecida com a do Istio, mas o sidecar não é o Envoy é proprietário.
 * [Kuma](https://kuma.io/) - Código-aberto, mantido pela empresa [Kong](https://konghq.com/), com arquitetura semelhante ao Istio, onde o kuma está no plano de controle e o Envoy no plano de dados.
-* [Linkerd](https://linkerd.io/) - É código-aberto 100% linça Apache, incubado pema [Cloud Native Computing Fundation](https://www.cncf.io/), a mesma fundação que mantem o kubernetes e o envoy, entre outros projetos. Não utiliza o Envoy, o seu proxy é o linkerd-proxy, mas sua arquitetura é muito semelhante ao do Istio e Kuma.
+* [Linkerd](https://linkerd.io/) - um projeto [Cloud Native Computing Fundation](https://www.cncf.io/), que introduziu a noção de malha de serviço e o termo para o mundo. É 100% código-aberto 100% com linceça Apache, incubado pema [CNCF](https://www.cncf.io/), a mesma fundação que mantem o kubernetes e o envoy, entre outros projetos. Não utiliza o Envoy, o seu proxy é o linkerd-proxy, mas sua arquitetura é muito semelhante ao do Istio e Kuma.
 * [Traefic Mesh](https://traefik.io/traefik-mesh/) - É uma solução de código aberto, não invasiva que permite a visibilidade e o gerenciamento dos fluxos de tráfego dentro de qualquer cluster do Kubernetes. Ele não usa _proxies_ em cada POD, em vez disso rotea o tráfego através de _proxies_ em cada nó do cluster.
+* [NGINX Service Mesh](https://www.nginx.com/products/nginx-service-mesh/) Similar ao Istio, utiliza sidecars para controlar a comunicação lateral.
 
 Nesta seção discutiremos como o Istio faz sua mágica e o que precisamos fazer com nossas aplicações para tirar proveito de todas as suas funcionalidades.
 
