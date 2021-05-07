@@ -4,7 +4,7 @@
 
 🚀 Lançamento: Versão [Katacoda - Istio | Istio avançado para iniciantes](https://www.katacoda.com/adsantos/courses/istio/kubernetes-istio-curso)
 
-⛵ Atualizado para o [Istio 1.9.2](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
+⛵ Atualizado para o [Istio 1.9.4](https://istio.io/latest/news/releases/1.9.x/announcing-1.9/change-notes/)!!
 
 ## Conteúdo
 
