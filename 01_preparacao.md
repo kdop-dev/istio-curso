@@ -26,8 +26,32 @@ Siga as instruções para criar um cluster de kubernetes com kind e ajuste o con
 Exemplo:
 
 ```bash
+# Verificando se kubectl está instalado
+kubectl version
+
+# Se não: Instalando kubectl.
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+# Instalar kind
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.9.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+
+# Definindo o cluster - https://kind.sigs.k8s.io/docs/user/configuration/
+cat > kind-config.yaml << "EOF"
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: istio-curso
+nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+EOF
+
 # Crie o cluster, isso pode demorar alguns minutos
-kind create cluster --name curso-istio
+kind create cluster --config kind-config.yaml
 
 # Verifique o cluster
 kubectl cluster-info --context curso-istio
