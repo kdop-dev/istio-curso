@@ -10,3 +10,4 @@ bkp
 *.crt
 *.csr
 *.key
+kubeconfig
