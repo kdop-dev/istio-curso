@@ -11,3 +11,4 @@ bkp
 *.csr
 *.key
 kubeconfig
+.metals
