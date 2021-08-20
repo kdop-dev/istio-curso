@@ -60,5 +60,5 @@ Siga para as primeiras lições [Introdução](./00_introducao.md) e [Parte 1 - 
 
 - [X] Versão para download [github](https://github.com/kdop-dev/istio-curso) - Dez/2020
 - [X] [Katacoda](https://www.katacoda.com/) - Fev/2021
-- [ ] [mybinder](https://mybinder.org/) - Previsão: Abr/2021
-- [ ] [Udemy](https://udemy.com) - Previsão: Maio/2021
+- [ ] [mybinder](https://mybinder.org/) - Previsão: Set/2021
+- [ ] [Udemy](https://udemy.com) - Previsão: Dez/2021
